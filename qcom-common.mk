@@ -30,7 +30,7 @@ PRODUCT_PACKAGES += \
     libtilerenderer \
     libI420colorconvert
 
-#PRODUCT_PROPERTY_OVERRIDES += \
+PRODUCT_PROPERTY_OVERRIDES += \
     debug.sf.hw=1 \
     debug.egl.hw=1 \
     debug.composition.type=gpu \
