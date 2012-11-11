@@ -33,8 +33,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     debug.sf.hw=1 \
     debug.egl.hw=1 \
-    debug.composition.type=dyn \
-    debug.mdpcomp.maxlayer=3 \
+    debug.composition.type=gpu \
+    debug.mdpcomp.maxlayer=2 \
     debug.mdpcomp.logs=0
 
 # GalaxyS3Settings
