@@ -34,10 +34,11 @@ COMMON_GLOBAL_CFLAGS += -DQCOM_HARDWARE
 
 # Recovery
 TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
-BOARD_CUSTOM_GRAPHICS := ../../../device/samsung/qcom-common/recovery/graphics.c
 
 # QCOM hardware
 BOARD_USES_QCOM_HARDWARE := true
+TARGET_QCOM_AUDIO_VARIANT := caf
+TARGET_QCOM_DISPLAY_VARIANT := caf
 
 # Graphics
 USE_OPENGL_RENDERER := true
@@ -55,4 +56,5 @@ TARGET_FORCE_CPU_UPLOAD := true
 # Charging mode
 BOARD_CHARGING_MODE_BOOTING_LPM := /sys/class/power_supply/battery/batt_lp_charging
 BOARD_BATTERY_DEVICE_NAME := "battery"
+
 
