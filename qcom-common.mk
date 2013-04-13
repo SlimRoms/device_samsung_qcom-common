@@ -29,9 +29,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     debug.sf.hw=1 \
     debug.egl.hw=1 \
-    debug.composition.type=dyn \
+    debug.composition.type=gpu \
     persist.hwc.mdpcomp.enable=true \
-    debug.mdpcomp.logs=0
+    debug.mdpcomp.logs=0 \
+    debug.mdpcomp.maxlayer=2
 
 # GalaxyS3Settings
 # TODO: Move here
