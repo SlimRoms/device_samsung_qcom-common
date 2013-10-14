@@ -158,4 +158,3 @@ LOCAL_MODULE_TAGS  := optional eng
 LOCAL_MODULE_CLASS := ETC
 LOCAL_SRC_FILES    := etc/thermal-engine-8960.conf
 include $(BUILD_PREBUILT)
-
