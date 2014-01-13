@@ -61,7 +61,7 @@ PRODUCT_PACKAGES += \
     thermal-engine-8064ab.conf \
     thermal-engine-8064.conf \
     thermal-engine-8930.conf \
-    thermal-engine-8960.conf
+    thermal-engine-8960.conf \
     thermald-8960ab.conf \
     thermal-engine-8064ab.conf
 
