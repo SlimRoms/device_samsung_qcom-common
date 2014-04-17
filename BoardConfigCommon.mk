@@ -23,9 +23,6 @@ TARGET_CPU_ABI := armeabi-v7a
 TARGET_CPU_ABI2 := armeabi
 TARGET_ARCH_VARIANT := armv7-a-neon
 
-# PowerHAL
-TARGET_USES_CM_POWERHAL := true
-
 # chargers
 BOARD_CHARGER_RES := device/samsung/qcom-common/charger
 
@@ -36,6 +33,9 @@ TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 TARGET_QCOM_AUDIO_VARIANT := caf
 TARGET_QCOM_DISPLAY_VARIANT := caf
 BOARD_USES_LEGACY_ALSA_AUDIO := true
+
+# Use CM PowerHAL by default
+TARGET_POWERHAL_VARIANT := cm
 
 # Graphics
 USE_OPENGL_RENDERER := true

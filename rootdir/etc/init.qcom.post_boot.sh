@@ -317,23 +317,6 @@ case "$target" in
         fi
         case "$soc_id" in
             "208" | "211" | "214" | "217" | "209" | "212" | "215" | "218" | "194" | "210" | "213" | "216")
-                echo 1 > /sys/module/cpubw_krait/parameters/enable
-                echo "interactive" > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
-                echo "interactive" > /sys/devices/system/cpu/cpu1/cpufreq/scaling_governor
-                echo "interactive" > /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor
-                echo "interactive" > /sys/devices/system/cpu/cpu3/cpufreq/scaling_governor
-                echo "20000 1400000:40000 1700000:20000" > /sys/devices/system/cpu/cpufreq/interactive/above_hispeed_delay
-                echo 90 > /sys/devices/system/cpu/cpufreq/interactive/go_hispeed_load
-                echo 1497600 > /sys/devices/system/cpu/cpufreq/interactive/hispeed_freq
-                echo "85 1500000:90 1800000:70" > /sys/devices/system/cpu/cpufreq/interactive/target_loads
-                echo 40000 > /sys/devices/system/cpu/cpufreq/interactive/min_sample_time
-                echo 20 > /sys/module/cpu_boost/parameters/boost_ms
-                echo 1728000 > /sys/module/cpu_boost/parameters/sync_threshold
-                echo 100000 > /sys/devices/system/cpu/cpufreq/interactive/sampling_down_factor
-                echo 1497600 > /sys/module/cpu_boost/parameters/input_boost_freq
-                echo 40 > /sys/module/cpu_boost/parameters/input_boost_ms
-            ;;
-            *)
                 for devfreq_gov in /sys/class/devfreq/qcom,cpubw*/governor
                 do
                     echo "cpubw_hwmon" > $devfreq_gov
@@ -345,9 +328,27 @@ case "$target" in
                 echo "20000 1400000:40000 1700000:20000" > /sys/devices/system/cpu/cpufreq/interactive/above_hispeed_delay
                 echo 90 > /sys/devices/system/cpu/cpufreq/interactive/go_hispeed_load
                 echo 1497600 > /sys/devices/system/cpu/cpufreq/interactive/hispeed_freq
+                echo "85 1500000:90 1800000:70" > /sys/devices/system/cpu/cpufreq/interactive/target_loads
+                echo 40000 > /sys/devices/system/cpu/cpufreq/interactive/min_sample_time
+                echo 30000 > /sys/devices/system/cpu/cpufreq/interactive/timer_rate
+                echo 20 > /sys/module/cpu_boost/parameters/boost_ms
+                echo 1728000 > /sys/module/cpu_boost/parameters/sync_threshold
+                echo 100000 > /sys/devices/system/cpu/cpufreq/interactive/sampling_down_factor
+                echo 1497600 > /sys/module/cpu_boost/parameters/input_boost_freq
+                echo 40 > /sys/module/cpu_boost/parameters/input_boost_ms
+            ;;
+            *)
+                echo "interactive" > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
+                echo "interactive" > /sys/devices/system/cpu/cpu1/cpufreq/scaling_governor
+                echo "interactive" > /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor
+                echo "interactive" > /sys/devices/system/cpu/cpu3/cpufreq/scaling_governor
+                echo "20000 1400000:40000 1700000:20000" > /sys/devices/system/cpu/cpufreq/interactive/above_hispeed_delay
+                echo 90 > /sys/devices/system/cpu/cpufreq/interactive/go_hispeed_load
+                echo 1497600 > /sys/devices/system/cpu/cpufreq/interactive/hispeed_freq
                 echo 1 > /sys/devices/system/cpu/cpufreq/interactive/io_is_busy
                 echo "85 1500000:90 1800000:70" > /sys/devices/system/cpu/cpufreq/interactive/target_loads
                 echo 40000 > /sys/devices/system/cpu/cpufreq/interactive/min_sample_time
+                echo 30000 > /sys/devices/system/cpu/cpufreq/interactive/timer_rate
                 echo 20 > /sys/module/cpu_boost/parameters/boost_ms
                 echo 1728000 > /sys/module/cpu_boost/parameters/sync_threshold
                 echo 100000 > /sys/devices/system/cpu/cpufreq/interactive/sampling_down_factor

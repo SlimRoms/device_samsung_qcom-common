@@ -63,11 +63,9 @@ PRODUCT_PACKAGES += \
     thermald-8064ab.conf \
     thermald-8064.conf \
     thermald-8930.conf \
+    thermald-8930ab.conf \
     thermald-8960.conf \
-    thermal-engine-8064ab.conf \
-    thermal-engine-8064.conf \
-    thermal-engine-8930.conf \
-    thermal-engine-8960.conf \
+    thermald-8260a.conf \
     thermald-8960ab.conf \
     thermal-engine-8064ab.conf \
     init.qcom.thermal_conf.sh
@@ -92,7 +90,8 @@ PRODUCT_PACKAGES += \
 
 # Charger
 PRODUCT_PACKAGES += charger charger_res_images
+
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 
 # Common overlay
-PRODUCT_PACKAGE_OVERLAYS += device/samsung/qcom-common/overlay
+DEVICE_PACKAGE_OVERLAYS += device/samsung/qcom-common/overlay
