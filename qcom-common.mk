@@ -13,7 +13,7 @@
 # limitations under the License.
 
 # Overlay
-DEVICE_PACKAGE_OVERLAYS += \
+PRODUCT_PACKAGE_OVERLAYS += \
     device/samsung/qcom-common/overlay
 
 # System properties
