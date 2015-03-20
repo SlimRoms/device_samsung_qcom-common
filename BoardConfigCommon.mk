@@ -25,6 +25,9 @@ TARGET_CPU_SMP := true
 TARGET_ARCH_VARIANT := armv7-a-neon
 TARGET_USE_QCOM_BIONIC_OPTIMIZATION := true
 
+# Charger percentage
+BOARD_CHARGER_SHOW_PERCENTAGE := true
+
 # CMHW
 BOARD_HARDWARE_CLASS += hardware/samsung/cmhw
 
