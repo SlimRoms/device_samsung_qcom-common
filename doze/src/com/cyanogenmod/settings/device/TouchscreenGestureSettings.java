@@ -16,16 +16,18 @@
 
 package com.cyanogenmod.settings.device;
 
-import com.android.internal.util.cm.ScreenType;
-
 import android.app.ActionBar;
+import android.content.Context;
 import android.os.Bundle;
 import android.preference.Preference;
 import android.preference.PreferenceActivity;
 import android.preference.SwitchPreference;
 import android.provider.Settings;
+import android.util.DisplayMetrics;
+import android.view.DisplayInfo;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.WindowManager;
 
 public class TouchscreenGestureSettings extends PreferenceActivity {
 
@@ -69,9 +71,19 @@ public class TouchscreenGestureSettings extends PreferenceActivity {
         super.onResume();
 
         // If running on a phone, remove padding around the listview
-        if (!ScreenType.isTablet(this)) {
+        if (!isTablet(this)) {
             getListView().setPadding(0, 0, 0, 0);
         }
+    }
+
+    private static boolean isTablet(Context con) {
+        WindowManager wm = (WindowManager) con.getSystemService(Context.WINDOW_SERVICE);
+        DisplayInfo outDisplayInfo = new DisplayInfo();
+        wm.getDefaultDisplay().getDisplayInfo(outDisplayInfo);
+        int shortSize = Math.min(outDisplayInfo.logicalHeight, outDisplayInfo.logicalWidth);
+        int shortSizeDp =
+            shortSize * DisplayMetrics.DENSITY_DEFAULT / outDisplayInfo.logicalDensityDpi;
+        return shortSizeDp > 720;
     }
 
     @Override
