@@ -27,7 +27,7 @@ TARGET_ARCH_VARIANT := armv7-a-neon
 BOARD_CHARGER_SHOW_PERCENTAGE := true
 
 # CMHW
-BOARD_HARDWARE_CLASS += hardware/samsung/cmhw
+#BOARD_HARDWARE_CLASS += hardware/samsung/cmhw
 
 # Graphics
 USE_OPENGL_RENDERER := true
